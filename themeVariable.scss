@@ -1,0 +1,26 @@
+/*
+    主题变量
+*/
+
+//五种主题切换
+
+@import './variable.scss';
+
+$themes:(
+    red:(
+        font-color:$color-red,
+    ),
+    green:(
+        font-color:$color-green,
+    ),
+    blue:(
+        font-color:$color-blue,
+    ),
+    orange:(
+        font-color:$color-orange,
+    ),
+    yellow:(
+        font-color:$color-yellow,
+    ),
+
+);

@@ -1,0 +1,24 @@
+@import "./themeVariable.scss";
+
+
+@mixin themify($themes:$themes) {
+    @each $theme-name,$map in $themes {
+        // & 表示父级元素
+        // ！global 表示覆盖原来的
+        .theme-#{$theme-name} & {
+            $theme-map:()!global;
+            //循环合并键值对
+            @each $sey,$value in $map {
+                $theme-map:map-merge($theme-map , ($key:$value)) !global;
+            }
+            //表示包含下面的函数
+            @content;
+
+            $theme-map:null !global;
+        }
+    }
+}
+
+@function themed($key){
+    @return map-get($theme-map, $key);
+}
